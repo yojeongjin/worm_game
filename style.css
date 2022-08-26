@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'DungGeunMo';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  font-family: 'DungGeunMo';
+}
+
+.state {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 600px;
+  height: 650px ;
+  position: relative;
+}
+
+.canvas{
+  background-color: rgb(37, 15, 81);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: state / 2;
+}
+
+.player {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+  font-size: 35px;
+  color: greenyellow;
+}
+
+.score{
+  position: absolute;
+  top: 40px;
+  left: 90px;
+  font-size: 35px;
+  color: #fff;
+}
+
+.highest {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  font-size: 35px;
+  color: red;
+}
+
+.high-score {
+  position: absolute;
+  top: 40px;
+  right: 90px;
+  font-size: 35px;
+  color: #fff;
+}
+
+.game-btn {
+  position: absolute;
+  bottom: 25px;
+  padding: 15px 25px 15px 25px;
+  font-family: 'DungGeunMo';
+}
