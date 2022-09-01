@@ -14,9 +14,14 @@ let state = {
     {x:10, y:10, direction:1},
     {x:10, y:20, direction:1},
     {x:10, y:30, direction:1}
-  ]
+  ],
+  food: {x:0, y:0}
 }
 
+function drawBackground(){
+  ctx.fillStyle='rgb(0, 0, 102)'
+  ctx.fillRect(0,0,450,450)
+}
 
 function drawWorm(ctx, x, y, head = false) {
   ctx.fillStyle = head ? 'rgba(229, 65, 120, 0.929)' : 'rgba(153, 206, 244, 0.498)'
@@ -53,11 +58,16 @@ gameBtn.onClick = () => {
   window.requestAnimationFrame(play)
 }
 
+
+let start = 0
 function play(timestamp) {
   start ++
-  if (timestamp-start > 1000 / 10) {
-    playWorm()
-    setWorm()
+  if (timestamp-start > 80) {
+    drawBackground()
+    makeWorm()
+    moveWorm()
+
+    
     start = timestamp
   }
   window.requestAnimationFrame(play)
