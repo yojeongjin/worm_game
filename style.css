@@ -26,8 +26,16 @@
   position: relative;
 }
 
+.background {
+  width: 450px;
+  height: 450px;
+}
+.back-img {
+  width: 100%;
+  height: 100%;
+}
+
 .canvas{
-  background-color: rgb(37, 15, 81);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +77,42 @@
 
 .game-btn {
   position: absolute;
-  bottom: 25px;
-  padding: 15px 25px 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 25px;
   font-family: 'DungGeunMo';
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  text-shadow:3px 3px 0px #bdbdbd
+}
+
+.game-btn:hover {
+  color: rgb(208, 67, 67);
+  transform: scale(1.1);
+}
+
+.specifics {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 25px;
+  bottom: 260px;
+  font-size: 25px;
+  text-shadow:3px 3px 0px #bdbdbd;
+  cursor: pointer;
+  color: #333;
+}
+
+.specifics:hover {
+  transform: scale(1.2);
+  transition: transform 0.5;
+}
+
+
+.non-show {
+  display: none;
 }

@@ -4,6 +4,8 @@ const ctx = canvas.getContext('2d')
 const $score = document.querySelector('.score')
 const $highScore = document.querySelector('.high-score')
 const $gameBtn = document.querySelector('.game-btn')
+const $info = document.querySelector('.specifics')
+
 
 let state = {
   score: 0,
@@ -19,9 +21,8 @@ let state = {
 }
 
 
-
 function drawBackground(){
-  ctx.fillStyle='rgb(0, 0, 102)'
+  ctx.fillStyle='rgb(37, 15, 81)'
   ctx.fillRect(0,0,450,450)
 }
 
@@ -158,11 +159,26 @@ function stretchBody() {
 }
 
 function gameOver() {
-  const head = state.worm[0]
+  let head = state.worm[0]
+
+  if(head.x < 0 || head.x > 450) {
+    return true
+  } else if (head.y < 0 || head.y > 450) {
+    return true
+  } else {
     return state.worm.some(
-      (body, index) => index !== 0 && head.x === body.x && head.y === body.y
+    (body, index) => index !== 0 && head.x === body.x && head.y === body.y
     )
+  }
 }
+
+function getHigh() {
+  if (state.score > state.highscore) {
+    localStorage.setItem('score', state.score)
+  }
+}
+
+
 
 
 
@@ -170,6 +186,9 @@ let start = 0
 function play(timestamp) {
   start++  
   if(gameOver()) {
+    state.gameover = true
+    getHigh()
+    alert('게임오버')
     return
   }
   if(timestamp - start > 80) {
@@ -209,4 +228,8 @@ function gameStart() {
 
 
 
-gameStart()
+$gameBtn.onclick = () => {
+  $gameBtn.classList.add('non-show')
+  $info.classList.add('non-show')
+  gameStart()
+}
