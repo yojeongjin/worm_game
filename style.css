@@ -86,12 +86,12 @@
   cursor: pointer;
   border: none;
   background-color: transparent;
-  text-shadow:3px 3px 0px #bdbdbd
+  text-shadow:3px 3px 0px #bdbdbd;
 }
 
 .game-btn:hover {
   color: rgb(208, 67, 67);
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }
 
 .specifics {
@@ -108,11 +108,114 @@
 }
 
 .specifics:hover {
-  transform: scale(1.2);
-  transition: transform 0.5;
+  transform: scale(1.1);
 }
 
+.how-to-modal {
+  position: absolute;
+  top: 40%;
+  left: 85px;
+  display: none;
+}
+
+.info-modal {
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 430px;
+  height: 180px;
+}
+
+.modal-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  border-radius: 20px;
+}
+
+.info-modal-content {
+  position: absolute;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  top: 40px;
+}
+
+.close-icon {
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  padding: 10px 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.close-icon:hover {
+  transform: scale(1.3);
+  transition: transform 0.5s;
+}
+
+.game-over-modal {
+  position: absolute;
+  display: none;
+}
+
+.end-modal {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.end-modal-content {
+  font-size: 80px;
+  background: linear-gradient(to bottom, #f55105, #FFCC33);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
+}
+
+.continue {
+  color: rgb(87, 84, 84);
+  font-size: 40px;
+  animation: blink-effect 1s step-end infinite;
+}
+.restart {
+  position: absolute;
+  top: 120px;
+  left: 110px;
+  font-size: 20px;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+.end {
+  position: absolute;
+  top: 120px;
+  right: 110px;
+  font-size: 20px;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+.restart:hover, .end:hover {
+  color: #fff;
+}
 
 .non-show {
   display: none;
+}
+
+.show {
+  display: block;
 }

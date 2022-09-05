@@ -178,9 +178,20 @@ function getHigh() {
   }
 }
 
+function endAlert() {
+  const $overAlert = document.querySelector('.game-over-modal')
+  const $restart = document.querySelector('.restart')
+  const $end = document.querySelector('.end')
 
-
-
+  $overAlert.classList.add('show')
+  $restart.onclick = () => {
+    $overAlert.classList.remove('show')
+    gameStart()
+  }
+  $end.addEventListener('click', () => {
+    $overAlert.classList.remove('show')
+  })
+}
 
 let start = 0
 function play(timestamp) {
@@ -188,7 +199,7 @@ function play(timestamp) {
   if(gameOver()) {
     state.gameover = true
     getHigh()
-    alert('게임오버')
+    endAlert()
     return
   }
   if(timestamp - start > 80) {
@@ -203,7 +214,6 @@ function play(timestamp) {
 
   window.requestAnimationFrame(play)
 }
-
 
 function gameStart() {
   if(state.gameover) {
@@ -226,10 +236,22 @@ function gameStart() {
   }
 }
 
-
-
 $gameBtn.onclick = () => {
   $gameBtn.classList.add('non-show')
   $info.classList.add('non-show')
   gameStart()
 }
+
+//modal
+
+const $howModal = document.querySelector('.how-to-modal')
+const $infoModal = document.querySelector('.info-modal')
+const $closeIcon = document.querySelector('.close-icon')
+
+$closeIcon.addEventListener('click', () => {
+  $infoModal.classList.add('non-show')
+})
+
+$info.addEventListener('click', () => {
+  $howModal.classList.add('show')
+})
