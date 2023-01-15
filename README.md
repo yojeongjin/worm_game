@@ -1,4 +1,5 @@
 # 💻 Project
+![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/98960420/212526028-085e383c-f4fe-4895-be5a-848514760c0f.gif)
 * 제목 : 지렁이 게임
 * 기간 : 2022.08.26~2022.09.05
 * 목적
